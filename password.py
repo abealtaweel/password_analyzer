@@ -3,14 +3,17 @@ class password_analyzer:
         self.frequencies={}
         self.length_of_word ={}
         
+        # a dictionary to store user password
+        self.user_password ={}
+        
     def parse(self):
         with open('passwords.txt') as f:
             for line in f:
-                print (line)
+                #print (line)
                 #rstrip 
                 length = len(line.rstrip())
                 
-                #  if lengh already in lengh_of_word
+                #  if lengh is already in lengh_of_word
                 # add count(the value) to 1
                 if (length in self.length_of_word):
                     self.length_of_word[length]+=1
@@ -28,20 +31,28 @@ class password_analyzer:
                     else:
                     #add char to frequences, set its count to 1
                         self.frequencies[c]=1
-            return
+                    
+        #store user password to dictionary self.user_password{}                
+        password=input('Input a password to check against the database: ')
+        self.user_password['User Password:']=password          
+        
+        #for (key, value) in set(self.length_of_word.items()) & set(self.user_password.items()):
+         #   print ('%s: %s is present in both aa and bb' % (key, value))
               
 #creating an object       
 password_analyzer = password_analyzer()
 
 #console output
 #print the passwords
-print("print the passwords:")
+#print("print the passwords:")
 print(password_analyzer.parse())
 
 #Print length of words
-print("The length of passwords:")
+print("The lengths of passwords stored in the database:")
 print(password_analyzer.length_of_word)
 
 #Print frequencies of characters
-print("Frequencies:")
+print("Frequencies of characters stored in the database:")
 print(password_analyzer.frequencies)
+print("user's password")
+print(password_analyzer.user_password)
