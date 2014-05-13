@@ -13,7 +13,7 @@ class password_analyzer:
                 #rstrip 
                 length = len(line.rstrip())
                 
-                #  if lengh is already in lengh_of_word
+                #if lengh is already in lengh_of_word
                 # add count(the value) to 1
                 if (length in self.length_of_word):
                     self.length_of_word[length]+=1
@@ -35,16 +35,13 @@ class password_analyzer:
         #store user password to dictionary self.user_password{}                
         password=input('Input a password to check against the database: ')
         self.user_password['User Password:']=password          
-        
-        #for (key, value) in set(self.length_of_word.items()) & set(self.user_password.items()):
-         #   print ('%s: %s is present in both aa and bb' % (key, value))
-              
+               
 #creating an object       
 password_analyzer = password_analyzer()
 
 #console output
 #print the passwords
-#print("print the passwords:")
+print("print the passwords:")
 print(password_analyzer.parse())
 
 #Print length of words
