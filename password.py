@@ -40,9 +40,7 @@ class password_analyzer:
 password_analyzer = password_analyzer()
 
 #console output
-#print the passwords
-print("print the passwords:")
-print(password_analyzer.parse())
+(password_analyzer.parse())
 
 #Print length of words
 print("The lengths of passwords stored in the database:")
@@ -51,5 +49,4 @@ print(password_analyzer.length_of_word)
 #Print frequencies of characters
 print("Frequencies of characters stored in the database:")
 print(password_analyzer.frequencies)
-print("user's password")
 print(password_analyzer.user_password)
